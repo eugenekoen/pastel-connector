@@ -1,0 +1,22 @@
+# Ignore everything, then allow only project files. A set of books dropped into
+# the workspace is then excluded by default rather than by remembering to add it.
+/*
+!/.gitignore
+!/README.md
+!/package.json
+!/src/
+!/docs/
+!/scripts/
+
+node_modules/
+*.log
+
+# Defence in depth: never commit Pastel data files wherever they turn up.
+*.DAT
+*.dat
+*.DDF
+*.ddf
+*.000
+*.DB0
+*.db0
+*.vdb4

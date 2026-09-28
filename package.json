@@ -1,0 +1,16 @@
+{
+    "name": "pastel-connector",
+    "version": "0.1.0",
+    "private": true,
+    "description": "Read account numbers and descriptions straight out of a Sage Pastel set of books, without opening Pastel.",
+    "type": "module",
+    "main": "src/server.js",
+    "scripts": {
+        "start": "node src/server.js",
+        "build": "node scripts/build-pages.js",
+        "accounts": "node src/cli.js"
+    },
+    "engines": {
+        "node": ">=18"
+    }
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pastel Account Viewer</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Pastel Account Viewer</h1>
+        <p class="sub">
+            Reads account numbers and descriptions straight from a Pastel set of books. Pastel does not need to be
+            installed. Everything runs in this browser tab &mdash; the books are never uploaded anywhere.
+        </p>
+    </header>
+
+    <section class="panel">
+        <label for="folderInput">Set of books folder</label>
+        <div class="row">
+            <input id="folderInput" type="file" webkitdirectory directory multiple />
+            <select id="masterKind" title="Which master file to read">
+                <option value="ledger">General Ledger</option>
+                <option value="customer">Customers</option>
+                <option value="supplier">Suppliers</option>
+            </select>
+            <button id="loadBtn" type="button" disabled>Load accounts</button>
+        </div>
+        <p id="status" class="status">Choose the folder that holds Accmas.DAT.</p>
+    </section>
+
+    <section class="panel">
+        <label for="accountPicker">Select an account number</label>
+        <div class="row">
+            <input id="accountFilter" type="search" placeholder="Filter…" spellcheck="false" />
+            <select id="accountPicker" size="1"></select>
+        </div>
+
+        <table class="selection">
+            <thead>
+                <tr>
+                    <th>Account Number</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody id="selectedRows">
+                <tr class="empty">
+                    <td colspan="2">Nothing selected yet.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="panel">
+        <div class="row between">
+            <h2>All accounts (<span id="accountCount">0</span>)</h2>
+            <button id="copyCsvBtn" type="button" class="ghost">Copy as CSV</button>
+        </div>
+        <div class="scroll">
+            <table class="grid">
+                <thead>
+                    <tr>
+                        <th>Account Number</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody id="allRows"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <details class="panel">
+        <summary>How this was read (diagnostics)</summary>
+        <p class="hint">
+            Field positions come from the book's own Pervasive dictionary (File.ddf / Field.ddf); the Btrieve page
+            geometry comes from the data file's control record.
+        </p>
+        <pre id="dump" class="dump">Load a set of books to see the detected layout.</pre>
+    </details>
+
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>
