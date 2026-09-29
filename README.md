@@ -53,9 +53,9 @@ npm start
 # then open http://127.0.0.1:5173
 ```
 
-Choose **General Ledger**, **Customers** or **Suppliers**. Selecting an account (from the
-dropdown, or by clicking a row) puts the account number in column 1 and its description in
-column 2. **How this was read** shows the detected layout and record counts.
+Choose **General Ledger**, **Customers** or **Suppliers**. Search the accounts by number or
+description to filter the table; the heading shows how many accounts match. **How this was read**
+shows the detected layout and record counts.
 
 After changing anything in `src/`, run `npm run build` to refresh `docs/core/`, which is the
 copy the static page loads.

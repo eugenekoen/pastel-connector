@@ -103,6 +103,11 @@ input[type="search"] {
     flex: 1 1 auto;
 }
 
+.account-search {
+    width: 100%;
+    margin-bottom: 12px;
+}
+
 input[type="number"] {
     width: 90px;
 }
@@ -180,18 +185,6 @@ td:first-child {
 .empty td {
     color: var(--muted);
     font-style: italic;
-}
-
-.selection {
-    margin-top: 16px;
-}
-
-.grid tbody tr {
-    cursor: pointer;
-}
-
-.grid tbody tr:hover {
-    background: rgba(127, 127, 127, .12);
 }
 
 .scroll {
